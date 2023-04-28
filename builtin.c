@@ -11,7 +11,7 @@ int _myexit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1])  /* If there is an exit arguement */
+	if (info->argv[1]) 
 	{
 		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
@@ -29,12 +29,6 @@ int _myexit(info_t *info)
 	return (-2);
 }
 
-/**
- * _mycd - changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
- */
 int _mycd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
@@ -47,7 +41,7 @@ int _mycd(info_t *info)
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
-			chdir_ret = /* TODO: what should this be? */
+			chdir_ret = 
 				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
@@ -61,7 +55,7 @@ int _mycd(info_t *info)
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
+		chdir_ret = 
 			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
@@ -79,12 +73,6 @@ int _mycd(info_t *info)
 	return (0);
 }
 
-/**
- * _myhelp - changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
- */
 int _myhelp(info_t *info)
 {
 	char **arg_array;
@@ -92,6 +80,6 @@ int _myhelp(info_t *info)
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_puts(*arg_array); /* temp att_unused workaround */
+		_puts(*arg_array);
 	return (0);
 }
