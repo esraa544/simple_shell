@@ -2,8 +2,6 @@
 
 /**
  * main - entry point
- * @ac: arg count
- * @av: arg vector
  *
  * Return: 0 on success, 1 on error
  */
@@ -23,7 +21,9 @@ int main(int ac, char **av)
 		if (fd == -1)
 		{
 			if (errno == EACCES)
+			{
 				exit(126);
+			}
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
