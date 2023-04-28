@@ -2,6 +2,7 @@
 
 /**
  * get_environ - returns the string array copy of our environ
+ *
  * Return: Always 0
  */
 char **get_environ(info_t *info)
